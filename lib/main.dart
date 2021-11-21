@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 
 void main(List<String> args) => runApp(QuizApp());
 
-class QuizApp extends StatelessWidget {
+class QuizApp extends StatefulWidget {
 
+  @override
+  State<QuizApp> createState() => _QuizAppState();
+}
+
+class _QuizAppState extends State<QuizApp> {
   int questionIndex = 0;
 
   void answers() {
