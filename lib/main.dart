@@ -22,13 +22,31 @@ class _QuizAppState extends State<QuizApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> questions = [
-      "What's your favourite color?",
-      "What's your favourite pet?",
-      "Which is your favourite between Android & iPhone?",
-      "Are you a day or night person?",
-      "Are you an introvert or extrovert",
-      "Continental or Local dishes?",
+    var questions = [
+      {
+      "questionText": "What's your favourite primary or secondary color?",
+      "answerText": ["Yellow", "Red", "Blue", "Green", "Orange", "Purple"],
+      },
+      {
+      "questionText": "What's your favourite pet?",
+      "answerText": ["Dog", "Cat", "Bird", "Reptiles", "Rabbits","Others"],
+      },
+      {
+      "questionText": "Which is your favourite Android & iPhone?",
+      "answer": ["iPhone", "Android"],
+      },
+      {
+      "questionText": "Are you a day or night person?",
+      "answerText": ["Day", "Night"],
+      },
+      {
+      "questionText": "Are you an introvert, extrovert or ambivert",
+      "answerText": ["Introvert", "Extrovert", "Ambivert"],
+      },
+      {
+      "questionText": "Which do you prefer Continental or Local dishes?",
+      "answerText": ["Continental", "Local"],
+      },
     ];
 
     return MaterialApp(
@@ -39,7 +57,7 @@ class _QuizAppState extends State<QuizApp> {
         body: Column(
           children: [
             Questions(
-              questions[_questionIndex],
+              questions[_questionIndex]['questionText'] as String,
             ),
             Answers(_answersMain),
             Answers(_answersMain),
