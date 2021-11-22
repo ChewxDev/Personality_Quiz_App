@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './questions.dart';
+import './answers.dart';
 
 void main(List<String> args) => runApp(QuizApp());
 
@@ -12,7 +13,7 @@ class QuizApp extends StatefulWidget {
 class _QuizAppState extends State<QuizApp> {
   int _questionIndex = 0;
 
-  void _answers() {
+  void _answersMain() {
     setState(() {
     _questionIndex++;
     //print("Answer 1 chosen");
@@ -40,22 +41,10 @@ class _QuizAppState extends State<QuizApp> {
             Questions(
               questions[_questionIndex],
             ),
-            RaisedButton(
-              child: Text("Answer 1"),
-              onPressed: _answers,
-            ),
-            RaisedButton(
-              child: Text("Answer 2"),
-              onPressed: _answers,
-            ),
-            RaisedButton(
-              child: Text("Answer 3"),
-              onPressed: _answers,
-            ),
-            RaisedButton(
-              child: Text("Answer 4"),
-              onPressed: _answers,
-            ),
+            Answers(_answersMain),
+            Answers(_answersMain),
+            Answers(_answersMain),
+            Answers(_answersMain),
           ],
         ),
       ),
