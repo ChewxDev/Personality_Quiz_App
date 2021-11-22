@@ -9,12 +9,12 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State<QuizApp> {
-  int questionIndex = 0;
+  int _questionIndex = 0;
 
-  void answers() {
+  void _answers() {
     setState(() {
-    questionIndex++;
-    print("Answer 1 chosen");
+    _questionIndex++;
+    //print("Answer 1 chosen");
     });
   }
 
@@ -37,23 +37,23 @@ class _QuizAppState extends State<QuizApp> {
         body: Column(
           children: [
             Text(
-              questions[questionIndex],
+              questions[_questionIndex],
             ),
             RaisedButton(
               child: Text("Answer 1"),
-              onPressed: answers,
+              onPressed: _answers,
             ),
             RaisedButton(
               child: Text("Answer 2"),
-              onPressed: answers,
+              onPressed: _answers,
             ),
             RaisedButton(
               child: Text("Answer 3"),
-              onPressed: answers,
+              onPressed: _answers,
             ),
             RaisedButton(
               child: Text("Answer 4"),
-              onPressed: answers,
+              onPressed: _answers,
             ),
           ],
         ),
