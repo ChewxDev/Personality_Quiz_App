@@ -12,8 +12,10 @@ class _QuizAppState extends State<QuizApp> {
   int questionIndex = 0;
 
   void answers() {
+    setState(() {
     questionIndex++;
     print("Answer 1 chosen");
+    });
   }
 
   @override
